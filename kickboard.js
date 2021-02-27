@@ -1,8 +1,12 @@
 function execPattern(pattern) {
+    if ('bit' in pattern) {
+        pattern = kickboardConfig.bits[pattern.bit];
+    }
+
     if ('rnd' in pattern) {
-        let count = pattern.min +
+        let count = pattern.rng[0] +
             Math.round(
-                Math.random() * (pattern.max - pattern.min)
+                Math.random() * (pattern.rng[1] - pattern.rng[0])
             );
         let string = "";
         for (let i = 0; i < count; i++) {

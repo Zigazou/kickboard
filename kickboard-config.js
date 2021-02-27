@@ -1,4 +1,21 @@
 const kickboardConfig = {
+  'bits': {
+    'notes': { 'rnd': ['♩', '♪', '♫', '♬'], 'rng': [1, 3] },
+    'chats': {
+      'rnd': ['GlitchCat ', 'mcaT ', 'CoolCat ', 'InuyoFace '],
+      'rng': [1, 3]
+    },
+    'chatsss': {
+      'rnd': ['GlitchCat ', 'mcaT ', 'CoolCat ', 'InuyoFace '],
+      'rng': [4, 10]
+    },
+    'coeurs': {
+      'rnd': ['TwitchUnity ', 'BisexualPride ', 'VirtualHug', '<3 '],
+      'rng': [1, 10]
+    },
+    'foster': { 'rnd': 'kickba2Foster ', 'rng': [1, 10] },
+  },
+
   'groups': {
     'Divers': [
       /************************************************************************/
@@ -9,51 +26,43 @@ const kickboardConfig = {
         'msgs': [
           {
             'name': 'Foster !',
-            'parts': [
-              { 'rnd': ' kickba2Foster ', 'min': 1, 'max': 10 }
-            ]
+            'parts': [ { 'bit': 'foster' } ]
           },
 
           {
             'name': 'Cœurs, cœurs',
-            'parts': [
-              {
-                'rnd': ['TwitchUnity ', 'BisexualPride ', 'VirtualHug', '<3 '],
-                'min': 1,
-                'max': 10
-              },
-            ]
+            'parts': [ { 'bit': 'coeurs' } ]
           },
 
           {
             'name': 'Solo',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
-              { 'rnd': ' kickba2Solo ', 'min': 3, 'max': 10 },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
+              { 'rnd': ' kickba2Solo ', 'rng': [3, 10] },
+              { 'bit': 'notes' },
             ]
           },
 
           {
             'name': 'Wohoh',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
-              { 'rnd': ' kickba2Wohoh ', 'min': 2, 'max': 10 },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
+              { 'rnd': ' kickba2Wohoh ', 'rng': [2, 10] },
+              { 'bit': 'notes' },
             ]
           },
 
           {
             'name': 'Petits applaudissements',
             'parts': [
-              { 'rnd': '👏 ', 'min': 1, 'max': 5 }
+              { 'rnd': ['👏', '👏🏽', '👏🏿', '👏🏻'], 'rng': [1, 5] }
             ]
           },
 
           {
             'name': 'Gros applaudissements',
             'parts': [
-              { 'rnd': '👏 ', 'min': 5, 'max': 15 }
+              { 'rnd': ['👏', '👏🏽', '👏🏿', '👏🏻'], 'rng': [5, 15] }
             ]
           },
         ]
@@ -61,6 +70,54 @@ const kickboardConfig = {
     ],
 
     'A': [
+      /************************************************************************/
+      /* Alone in the dark                                                    */
+      /************************************************************************/
+      {
+        'name': 'Alone in the dark',
+        'msgs': [
+          {
+            'name': 'Ah ah ah',
+            'parts': [
+              { 'str': 'Ah ah ' },
+              { 'rnd': 'a', 'rng': [1, 5] },
+              { 'str': 'h ' },
+              { 'rnd': '!', 'rng': [1, 3] },
+            ]
+          },
+
+          {
+            'name': 'Solo',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'rnd': ' kickba2Solo ', 'rng': [3, 10] },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Le sexe pour toi',
+            'parts': [
+              { 'str': 'Le sexe pour toi' },
+            ]
+          },
+
+          {
+            'name': 'C’est la saga Zelda',
+            'parts': [
+              { 'str': 'C’est la saga Zelda' },
+            ]
+          },
+
+          {
+            'name': 'C’est une légende !',
+            'parts': [
+              { 'str': 'C’est une légende !' },
+            ]
+          },
+        ]
+      },
+
       /************************************************************************/
       /* Autonomie                                                            */
       /************************************************************************/
@@ -72,8 +129,7 @@ const kickboardConfig = {
             'parts': [
               {
                 'rnd': [' GlitchLit ', ' CurseLit ', ' TwitchLit'],
-                'min': 1,
-                'max': 5
+                'rng': [1, 5]
               }
             ]
           },
@@ -83,8 +139,7 @@ const kickboardConfig = {
             'parts': [
               {
                 'rnd': [' GlitchLit ', ' CurseLit ', ' TwitchLit'],
-                'min': 5,
-                'max': 10
+                'rng': [5, 10]
               }
             ]
           },
@@ -107,22 +162,22 @@ const kickboardConfig = {
           {
             'name': 'Et tu me manques déjà',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 10 },
+              { 'rnd': ['♩', '♪', '♫', '♬'], 'rng': [1, 10] },
               { 'str': ' Et tu me manques d' },
-              { 'rnd': 'é', 'min': 1, 'max': 10 },
+              { 'rnd': 'é', 'rng': [1, 10] },
               { 'str': 'jà ' },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 10 },
+              { 'rnd': ['♩', '♪', '♫', '♬'], 'rng': [1, 10] },
             ]
           },
 
           {
             'name': 'Comment vivre sans toi',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 10 },
+              { 'rnd': ['♩', '♪', '♫', '♬'], 'rng': [1, 10] },
               { 'str': ' Comment vi' },
-              { 'rnd': 'i', 'min': 1, 'max': 10 },
+              { 'rnd': 'i', 'rng': [1, 10] },
               { 'str': 'vre sans toi ? ' },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 10 },
+              { 'rnd': ['♩', '♪', '♫', '♬'], 'rng': [1, 10] },
             ]
           },
         ]
@@ -139,44 +194,44 @@ const kickboardConfig = {
           {
             'name': 'Est-ce qu’elle pense à moi ?',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
               { 'str': ' Est-ce qu’elle pense à m' },
-              { 'rnd': 'o', 'min': 1, 'max': 5 },
-              { 'rnd': 'i', 'min': 1, 'max': 10 },
-              { 'rnd': ' ou à mon avatar', 'min': 0, 'max': 1 },
+              { 'rnd': 'o', 'rng': [1, 5] },
+              { 'rnd': 'i', 'rng': [1, 10] },
+              { 'rnd': ' ou à mon avatar', 'rng': [0, 1] },
               { 'str': ' ? ' },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
             ]
           },
 
           {
             'name': 'Est-ce qu’elle rêve de moi ?',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
               { 'str': ' Est-ce qu’elle rêve de m' },
-              { 'rnd': 'o', 'min': 1, 'max': 5 },
-              { 'rnd': 'i', 'min': 1, 'max': 10 },
-              { 'rnd': ' ou de mon avatar', 'min': 0, 'max': 1 },
+              { 'rnd': 'o', 'rng': [1, 5] },
+              { 'rnd': 'i', 'rng': [1, 10] },
+              { 'rnd': ' ou de mon avatar', 'rng': [0, 1] },
               { 'str': ' ? ' },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
             ]
           },
 
           {
             'name': 'Mon cœur est perdu dans le blizzard',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
               { 'str': ' Mon cœur est perdu dans le blizzard ' },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 }
+              { 'bit': 'notes' }
             ]
           },
 
           {
             'name': 'Solo',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
-              { 'rnd': ' kickba2Solo ', 'min': 3, 'max': 10 },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
+              { 'rnd': ' kickba2Solo ', 'rng': [3, 10] },
+              { 'bit': 'notes' },
             ]
           },
         ]
@@ -193,91 +248,91 @@ const kickboardConfig = {
           {
             'name': 'Wohoh',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
-              { 'rnd': ' kickba2Wohoh ', 'min': 2, 'max': 10 },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
+              { 'rnd': ' kickba2Wohoh ', 'rng': [2, 10] },
+              { 'bit': 'notes' },
             ]
           },
 
           {
             'name': 'Waou',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
-              { 'rnd': [' W',' Ou'], 'min': 1, 'max': 1 },
-              { 'rnd': 'a', 'min': 2, 'max': 10 },
-              { 'rnd': 'h', 'min': 0, 'max': 1 },
-              { 'rnd': 'o', 'min': 1, 'max': 5 },
-              { 'rnd': 'u', 'min': 1, 'max': 5 },
-              { 'rnd': 'h', 'min': 0, 'max': 1 },
+              { 'bit': 'notes' },
+              { 'rnd': [' W',' Ou'], 'rng': [1, 1] },
+              { 'rnd': 'a', 'rng': [2, 10] },
+              { 'rnd': 'h', 'rng': [0, 1] },
+              { 'rnd': 'o', 'rng': [1, 5] },
+              { 'rnd': 'u', 'rng': [1, 5] },
+              { 'rnd': 'h', 'rng': [0, 1] },
               { 'str': ' ' },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
             ]
           },
 
           {
             'name': 'Ooyeah',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
               { 'str': ' O' },
-              { 'rnd': 'o', 'min': 1, 'max': 5 },
-              { 'rnd': 'u', 'min': 0, 'max': 5 },
+              { 'rnd': 'o', 'rng': [1, 5] },
+              { 'rnd': 'u', 'rng': [0, 5] },
               { 'str': 'y' },
-              { 'rnd': 'e', 'min': 1, 'max': 5 },
-              { 'rnd': 'a', 'min': 1, 'max': 5 },
+              { 'rnd': 'e', 'rng': [1, 5] },
+              { 'rnd': 'a', 'rng': [1, 5] },
               { 'str': 'h ' },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
             ]
           },
 
           {
             'name': 'Je garde ma carapace bleue',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
               { 'str': ' J' },
-              { 'rnd': 'e', 'min': 3, 'max': 10 },
+              { 'rnd': 'e', 'rng': [3, 10] },
               { 'str': ' garde ma carapace bl' },
-              { 'rnd': 'e', 'min': 3, 'max': 10 },
-              { 'rnd': 'u', 'min': 3, 'max': 10 },
-              { 'rnd': 'e', 'min': 3, 'max': 10 },
-              { 'rnd': ' si t’es en première place', 'min': 0, 'max': 1 },
+              { 'rnd': 'e', 'rng': [3, 10] },
+              { 'rnd': 'u', 'rng': [3, 10] },
+              { 'rnd': 'e', 'rng': [3, 10] },
+              { 'rnd': ' si t’es en première place', 'rng': [0, 1] },
               { 'str': ' ' },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
             ]
           },
 
           {
             'name': '…bleeeeeeeeeuuuuuue',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
               { 'str': ' J' },
-              { 'rnd': 'e', 'min': 3, 'max': 10 },
+              { 'rnd': 'e', 'rng': [3, 10] },
               { 'str': ' garde ma carapace bl' },
-              { 'rnd': 'e', 'min': 10, 'max': 20 },
-              { 'rnd': 'u', 'min': 10, 'max': 20 },
-              { 'rnd': 'e', 'min': 10, 'max': 20 },
-              { 'rnd': ' si t’es en première place', 'min': 0, 'max': 1 },
+              { 'rnd': 'e', 'rng': [10, 20] },
+              { 'rnd': 'u', 'rng': [10, 20] },
+              { 'rnd': 'e', 'rng': [10, 20] },
+              { 'rnd': ' si t’es en première place', 'rng': [0, 1] },
               { 'str': ' ' },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
             ]
           },
 
           {
             'name': 'Toudoudoudou',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
               { 'str': ' Tou' },
-              { 'rnd': 'dou', 'min': 5, 'max': 15 },
+              { 'rnd': 'dou', 'rng': [5, 15] },
               { 'str': ' ' },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
             ]
           },
 
           {
             'name': 'Puis rejouer',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
               { 'str': ' Puis rejouer et rejouer ' },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
             ]
           },
         ]
@@ -292,26 +347,115 @@ const kickboardConfig = {
           {
             'name': 'Foster !',
             'parts': [
-              { 'rnd': 'kickba2Foster ', 'min': 1, 'max': 10 },
-              { 'rnd': '!', 'min': 1, 'max': 5 }
+              { 'bit': 'foster' },
+              { 'rnd': '!', 'rng': [1, 5] }
             ]
           },
 
           {
             'name': 'Code Lyoko, tout reprogrammer',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
               { 'str': ' Code Lyoko, tout reprogrammer ! ' },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 }
+              { 'bit': 'notes' }
             ]
           },
 
           {
             'name': 'Code Lyoko, un monde sans danger',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
               { 'str': ' Code Lyoko, un monde sans danger ! ' },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 }
+              { 'bit': 'notes' }
+            ]
+          },
+        ]
+      },
+
+      /************************************************************************/
+      /* Coucou                                                               */
+      /************************************************************************/
+      {
+        'name': 'Coucou',
+        'msgs': [
+          {
+            'name': 'Coucou !',
+            'parts': [ { 'str': 'Coucou ! VoHiYo' } ]
+          },
+
+          {
+            'name': 'Tu veux voir ma 🍆 ?',
+            'parts': [
+              { 'str': 'Tu veux voir ma 🍆 ?' },
+              { 'rnd': ' <3', 'rng': [2, 10] },
+            ]
+          },
+
+          {
+            'name': 'Wohoh',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'rnd': ' kickba2Wohoh ', 'rng': [2, 10] },
+              { 'bit': 'notes' },
+            ]
+          },
+        ]
+      },
+
+      /************************************************************************/
+      /* Crise de la quarantaine                                              */
+      /************************************************************************/
+      {
+        'name': 'Crise de la quarantaine',
+        'msgs': [
+          {
+            'name': 'Restez chez vous !',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' Restez chez vous ! ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'NON !',
+            'parts': [
+              { 'str': 'N' },
+              { 'rnd': 'O', 'rng': [1, 4] },
+              { 'str': 'N ' },
+              { 'rnd': '!', 'rng': [1, 3] },
+            ]
+          },
+
+          {
+            'name': 'J’ai l’habitude',
+            'parts': [
+              { 'bit': 'notes' },
+              {
+                'rnd': [' Bien sûr, bien sûr, j’ai ', ' J’ai '],
+                'rng': [1, 1]
+              },
+              { 'rnd': 'déjà ', 'rng': [0, 1] },
+              { 'str': 'l’habitude ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Wohoh',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'rnd': ' kickba2Wohoh ', 'rng': [2, 10] },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Solo',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'rnd': ' kickba2Solo ', 'rng': [3, 10] },
+              { 'bit': 'notes' },
             ]
           },
         ]
@@ -329,28 +473,280 @@ const kickboardConfig = {
             'name': 'Non, non, non',
             'parts': [
               { 'str': 'N' },
-              { 'rnd': 'o', 'min': 1, 'max': 7 },
+              { 'rnd': 'o', 'rng': [1, 7] },
               { 'str': 'n, n' },
-              { 'rnd': 'o', 'min': 1, 'max': 7 },
+              { 'rnd': 'o', 'rng': [1, 7] },
               { 'str': 'n, n' },
-              { 'rnd': 'o', 'min': 1, 'max': 7 },
+              { 'rnd': 'o', 'rng': [1, 7] },
               { 'str': 'n' },
+              {
+                'rnd': [
+                  ' UWot',
+                  ' UnSane',
+                  ' RuleFive',
+                  ' WutFace',
+                  ' BrokeBack',
+                  ' SMOrc',
+                  ' DansGame',
+                  ' >(',
+                  ' :('
+                ],
+                'rng': [3, 5]
+              },
             ]
           },
 
           {
             'name': 'Une erreur de compilation',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 10 },
+              { 'bit': 'notes' },
               { 'str': ' Une erreur de compilation ' },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 10 },
+              { 'bit': 'notes' },
             ]
-          }
+          },
+
+          {
+            'name': 'Une erreur de ponctuation',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' Une erreur de ponctuation ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Il manquait juste un point-virgule',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' Il manquait juste un point-virgule' },
+              { 'rnd': ' ;', 'rng': [8, 15] },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Point-virgule',
+            'parts': [
+              { 'rnd': ';', 'rng': [8, 30] },
+            ]
+          },
+        ]
+      },
+
+      /************************************************************************/
+      /* Et il en reste plein d’autres                                        */
+      /************************************************************************/
+      {
+        'name': 'Et il en reste plein d’autres',
+        'msgs': [
+          {
+            'name': 'Un jeu au hasard',
+            'parts': [
+              { 'rnd': '<3 ', 'rng': [1, 3] },
+              {
+                'rnd': [
+                  'Dal’X',
+                  'Strip Fighter',
+                  'Gigallo',
+                  'Jungle Fever',
+                  'Sex games ',
+                  'Teenage Queen',
+                  'Stroker',
+                  'Rapelay',
+                  'Big momma',
+                  'Brad Stallion',
+                  'Astrotit',
+                  'Orgasmatrion',
+                  'Girl Test ',
+                  'Fuck Quest',
+                  'Phunk the world',
+                  'Sex Sex Sex',
+                ],
+                'rng': [1, 1]
+              },
+              { 'rnd': ' <3', 'rng': [1, 3] },
+            ]
+          },
+
+          {
+            'name': 'Wohoh',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'rnd': ' kickba2Wohoh ', 'rng': [2, 10] },
+              { 'bit': 'notes' },
+            ]
+          },
+        ]
+      },
+    ],
+
+    'F': [
+      /************************************************************************/
+      /* Une fille                                                            */
+      /************************************************************************/
+      {
+        'name': 'Une fille',
+        'msgs': [
+          {
+            'name': 'Mais...',
+            'parts': [ { 'str': 'Mais...' } ]
+          },
+
+          {
+            'name': 'Mais c’était un agent du FBI !',
+            'parts': [ { 'str': 'Mais c’était un agent du FBI !' } ]
+          },
+
+          {
+            'name': 'C’était un agent du F. B. I. !',
+            'parts': [ { 'str': 'C’était un agent du Effe Bi Aïe !' } ]
+          },
+        ]
+      },
+    ],
+
+    'G': [
+      /************************************************************************/
+      /* Gandalf                                                              */
+      /************************************************************************/
+      {
+        'name': 'Gandalf',
+        'msgs': [
+          {
+            'name': 'Zut, flûte !',
+            'parts': [
+              { 'rnd': ['Zut, ', 'ZUT, '], 'rng': [1, 1] },
+              { 'rnd': ['flûte ', 'FLÛTE '], 'rng': [1, 1] },
+              { 'rnd': '!', 'rng': [1, 3] }
+            ]
+          },
+
+          {
+            'name': 'You pi !',
+            'parts': [
+              { 'rnd': ['You... ', 'YOU... '], 'rng': [1, 1] },
+              { 'rnd': ['pi ', 'PI '], 'rng': [1, 1] },
+              { 'rnd': '!', 'rng': [1, 3] }
+            ]
+          },
+
+          {
+            'name': 'Vous ne passerez pas !',
+            'parts': [ { 'str': 'Vous... ne... passerez... pas !' } ]
+          },
+        ]
+      },
+    ],
+
+    'H': [
+      /************************************************************************/
+      /* Han shot first                                                       */
+      /************************************************************************/
+      {
+        'name': 'Han shot first',
+        'msgs': [
+          {
+            'name': 'Elle a de belles... tresses',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' Elle a de belles... ' },
+              {
+                'rnd': ['tresses ', 'tresses ', 'ffftresses ', 'fesses '],
+                'rng': [1, 1]
+              },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'J’tire en premier !',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' J’tire en premier ! ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Wohoh',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'rnd': ' kickba2Wohoh ', 'rng': [2, 10] },
+              { 'bit': 'notes' },
+            ]
+          },
         ]
       },
     ],
 
     'I': [
+      /************************************************************************/
+      /* Ils attaquent                                                        */
+      /************************************************************************/
+      {
+        'name': 'Ils attaquent',
+        'msgs': [
+          {
+            'name': 'Zombies',
+            'parts': [
+              { 'rnd': 'kickba2Zombie ', 'rng': [3, 15] }
+            ]
+          },
+
+          {
+            'name': 'Martiens',
+            'parts': [
+              { 'rnd': 'kickba2Zombie ', 'rng': [3, 15] }
+            ]
+          },
+
+          {
+            'name': 'Robots',
+            'parts': [
+              { 'rnd': 'kickba2Zombie ', 'rng': [3, 15] }
+            ]
+          },
+
+          {
+            'name': 'Ma tête',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' Ma tête, ma tête, ma tête ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Un par un',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'rnd': [' 1', ' Un'], 'rng':[1, 1] },
+              { 'str': ' par ' },
+              { 'rnd': ['1 ', 'un '], 'rng':[1, 1] },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Le rock’n’roll nous a sauvés',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' Le rock’n’roll nous a sauvés ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Le reggae nous a sauvés',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' Le reggae nous a sauvés ' },
+              { 'bit': 'notes' },
+            ]
+          },
+        ]
+      },
+
       /************************************************************************/
       /* Incompatibilité totale                                               */
       /************************************************************************/
@@ -360,51 +756,37 @@ const kickboardConfig = {
           {
             'name': 'Incompatibilité totale !',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
               { 'str': ' Incompatibilité totale ! ' },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
             ]
           },
 
           {
             'name': 'Mes chats ne t’aiment pas',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
               { 'str': ' Mes chats ne t’aiment pas ! ' },
-              {
-                'rnd': ['GlitchCat ', 'mcaT ', 'CoolCat ', 'InuyoFace '],
-                'min': 1,
-                'max': 3
-              },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'chats' },
+              { 'bit': 'notes' },
             ]
           },
 
           {
             'name': 'Mes chats ne t’aimeeeeent pas',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
               { 'str': ' Mes chats ne t’aim' },
-              { 'rnd': 'e', 'min': 3, 'max': 10 },
+              { 'rnd': 'e', 'rng': [3, 10] },
               { 'str': 'nt pas ! ' },
-              {
-                'rnd': ['GlitchCat ', 'mcaT ', 'CoolCat ', 'InuyoFace '],
-                'min': 1,
-                'max': 3
-              },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'chats' },
+              { 'bit': 'notes' },
             ]
           },
 
           {
             'name': 'Chats, chats',
-            'parts': [
-              {
-                'rnd': ['GlitchCat ', 'mcaT ', 'CoolCat ', 'InuyoFace '],
-                'min': 4,
-                'max': 10
-              },
-            ]
+            'parts': [ { 'bit': 'chatsss' } ]
           },
         ]
       },
@@ -419,44 +801,659 @@ const kickboardConfig = {
         'msgs': [
           {
             'name': '<3',
-            'parts': [ { 'rnd': '<3 ', 'min': 1, 'max': 15 } ]
+            'parts': [ { 'rnd': '<3 ', 'rng': [1, 1] } ]
           },
 
           {
             'name': 'Cœurs, cœurs',
-            'parts': [
-              {
-                'rnd': ['TwitchUnity ', 'BisexualPride ', 'VirtualHug', '<3 '],
-                'min': 1,
-                'max': 10
-              },
-            ]
+            'parts': [ { 'bit': 'coeurs' } ]
           },
 
           {
             'name': 'Je t’inférieur à trois Wohoh',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
               { 'str': ' Je t’inférieur à trois kickba2Wohoh kickba2Wohoh ' },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
             ]
           },
 
           {
             'name': 'Solo',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
-              { 'rnd': ' kickba2Solo ', 'min': 3, 'max': 10 },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
+              { 'rnd': ' kickba2Solo ', 'rng': [3, 10] },
+              { 'bit': 'notes' },
             ]
           },
 
           {
             'name': 'Wohoh',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
-              { 'rnd': ' kickba2Wohoh ', 'min': 2, 'max': 10 },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
+              { 'rnd': ' kickba2Wohoh ', 'rng': [2, 10] },
+              { 'bit': 'notes' },
+            ]
+          },
+        ]
+      },
+    ],
+
+    'K': [
+      /************************************************************************/
+      /* Kickban                                                              */
+      /************************************************************************/
+      {
+        'name': 'Kickban',
+        'msgs': [
+          {
+            'name': 'Le groupe que tu retrouves en live',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' Kickban, c’est le groupe que tu retrouves en live ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Le groupe qui te kick et qui te ban',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' Kickban, c’est le groupe qui te kick et qui te ban ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Applaudissements',
+            'parts': [
+              { 'rnd': ['👏', '👏🏽', '👏🏿', '👏🏻'], 'rng': [5, 15] }
+            ]
+          },
+        ]
+      },
+    ],
+
+    'M': [
+      /************************************************************************/
+      /* Medley                                                               */
+      /************************************************************************/
+      {
+        'name': 'Medley',
+        'msgs': [
+          {
+            'name': 'Sonic',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' S' },
+              { 'rnd': 'o', 'rng': [5, 15] },
+              { 'str': 'nic ! ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Homme ou machine',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' Homme ou mach' },
+              { 'rnd': 'i', 'rng': [2, 5] },
+              { 'str': 'ne ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Toujours, toujours...',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' Toujours, toujours... ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Capitaine Flam',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' C' },
+              { 'rnd': 'a', 'rng': [2, 5] },
+              { 'str': 'pitaine Flam ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'La victoire !',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' LA VICTOIRE ! ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Olive et Tom',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' Olive et Tom ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Tom, Olivier',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' Tom, Olivier ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Tic, Tic, Tic, Tic et Tac',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' Tic, Tic, Tic, Tic et Tac ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Picsou',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' P' },
+              { 'rnd': 'i', 'rng': [2, 5] },
+              { 'str': 'cso' },
+              { 'rnd': 'u', 'rng': [2, 5] },
+              { 'str': ' ! ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Ouh ouh',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' Ouh ouh ! ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Tortues Ninja',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' Tortues Ninja ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Cowabunga le cri... des ninjas',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' Cowabunga le cri... des ninjas ! ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Wouh ouh ouh',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' Wouh ouh ouh ! ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Les Entrechats sont là',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' Les Entrechats sont là ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Nous, les Minipouss',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' Nous, les Minipouss ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Oui, les Minipouss',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' Oui, les Minipouss ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Wahou !',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' W' },
+              { 'rnd': 'a', 'rng': [2, 5] },
+              { 'str': 'h' },
+              { 'rnd': 'o', 'rng': [2, 5] },
+              { 'rnd': 'u', 'rng': [2, 5] },
+              { 'str': ' ! ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Goldorak, go !',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' Goldorak, go !' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Denver !',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' Denver !' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Et bien plus encooore',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' Et bien plus enc' },
+              { 'rnd': 'o', 'rng': [4, 8] },
+              { 'str': 're ! ' },
+              { 'bit': 'notes' },
+            ]
+          },
+        ]
+      },
+
+      /************************************************************************/
+      /* Le métro                                                             */
+      /************************************************************************/
+      {
+        'name': 'Le métro',
+        'msgs': [
+          {
+            'name': 'J’aime pas le métro',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' J’aime pas le m' },
+              { 'rnd': 'é', 'rng': [3, 5] },
+              { 'str': 'tr' },
+              { 'rnd': 'o', 'rng': [3, 5] },
+              { 'str': ' ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Le métro wohoh',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' Le métr' },
+              { 'rnd': 'o', 'rng': [3, 5] },
+              { 'str': ' kickba2Wohoh ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Ça pue le métro',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' Ça pue le m' },
+              { 'rnd': 'é', 'rng': [3, 5] },
+              { 'str': 'tr' },
+              { 'rnd': 'o', 'rng': [3, 5] },
+              { 'str': ' ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Wohoh',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'rnd': ' kickba2Wohoh ', 'rng': [2, 10] },
+              { 'bit': 'notes' },
+            ]
+          },
+        ]
+      },
+
+      /************************************************************************/
+      /* Mon grand frère                                                      */
+      /************************************************************************/
+      {
+        'name': 'Mon grand frère',
+        'msgs': [
+          {
+            'name': 'Mon grand frère',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' PowerUpL Mon grand frère PowerUpR ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Palapa palapa',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' P' },
+              { 'rnd': 'a', 'rng': [1, 5] },
+              { 'str': 'l' },
+              { 'rnd': 'a', 'rng': [1, 5] },
+              { 'str': 'p' },
+              { 'rnd': 'a', 'rng': [1, 5] },
+              { 'str': ' p' },
+              { 'rnd': 'a', 'rng': [1, 5] },
+              { 'str': 'l' },
+              { 'rnd': 'a', 'rng': [1, 5] },
+              { 'str': 'p' },
+              { 'rnd': 'a', 'rng': [1, 5] },
+              { 'str': ' ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'PALAPA PALAPA',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' P' },
+              { 'rnd': 'A', 'rng': [1, 5] },
+              { 'str': 'L' },
+              { 'rnd': 'A', 'rng': [1, 5] },
+              { 'str': 'P' },
+              { 'rnd': 'A', 'rng': [1, 5] },
+              { 'str': ' P' },
+              { 'rnd': 'A', 'rng': [1, 5] },
+              { 'str': 'L' },
+              { 'rnd': 'A', 'rng': [1, 5] },
+              { 'str': 'P' },
+              { 'rnd': 'A', 'rng': [1, 5] },
+              { 'str': ' ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Jamais jamais',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' Jamais ' },
+              { 'rnd': 'jamais ', 'rng': [1, 5] },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Solo',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'rnd': ' kickba2Solo ', 'rng': [3, 10] },
+              { 'bit': 'notes' },
+            ]
+          },
+        ]
+      },
+
+      /************************************************************************/
+      /* Mon uptime                                                           */
+      /************************************************************************/
+      {
+        'name': 'Mon uptime',
+        'msgs': [
+          {
+            'name': 'Mon uptime',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' Mon upt' },
+              { 'rnd': 'i', 'rng': [1, 8] },
+              { 'str': 'me ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'é é é',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' é é é ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'À s’éteindre ou à rebooter',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' À s’éteindre ou à rebooter ' },
+              { 'bit': 'notes' },
+            ]
+          },
+        ]
+      },
+
+      /************************************************************************/
+      /* My spot                                                              */
+      /************************************************************************/
+      {
+        'name': 'My spot',
+        'msgs': [
+          {
+            'name': 'Ma place',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' Ma pl' },
+              { 'rnd': 'a', 'rng': [1, 5] },
+              { 'str': 'ce ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'You are in my spot',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' You are in m' },
+              { 'rnd': 'y', 'rng': [1, 5] },
+              { 'str': ' sp' },
+              { 'rnd': 'o', 'rng': [1, 5] },
+              { 'str': 't ! ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Wohoh',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'rnd': ' kickba2Wohoh ', 'rng': [2, 10] },
+              { 'bit': 'notes' },
+            ]
+          },
+        ]
+      },
+    ],
+
+    'N': [
+      /************************************************************************/
+      /* Nos super-héros                                                      */
+      /************************************************************************/
+      {
+        'name': 'Nos super-héros',
+        'msgs': [
+          {
+            'name': 'Un super-héros au hasard',
+            'parts': [
+              { 'str': 'MercyWing1 ' },
+              {
+                'rnd': [
+                  'Natasha Romanoff',
+                  'Steve Rogers',
+                  'Clint Barton',
+                  'Carol Danvers',
+                  'Tony Stark',
+                  'Bruce Banner',
+                  'T-T-T-T-Thor',
+                  'Wanda',
+                  'Pietro Maximoff',
+                  'Stephen Strange',
+                  'Matt Murdock',
+                  'Peter Parker',
+                  'Susan Storm',
+                  'Johnny Storm',
+                  'Hope Van Dyne',
+                  'T-T-T-T’Challa',
+                  'Steve Ditko',
+                  'Jack Kirby',
+                  'Stan Lee'
+                ],
+                'rng': [1, 1]
+              },
+              { 'str': ' MercyWing2' },
+            ]
+          },
+
+          {
+            'name': 'Des cœurs',
+            'parts': [ { 'bit': 'coeurs' } ]
+          },
+
+          {
+            'name': 'Solo',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'rnd': ' kickba2Solo ', 'rng': [3, 10] },
+              { 'bit': 'notes' },
+            ]
+          },
+        ]
+      },
+    ],
+
+    'P': [
+      /************************************************************************/
+      /* Pas vu à la télé                                                     */
+      /************************************************************************/
+      {
+        'name': 'Pas vu à la télé',
+        'msgs': [
+          {
+            'name': 'Foster !',
+            'parts': [
+              { 'bit': 'foster' },
+              { 'rnd': '!', 'rng': [1, 5] }
+            ]
+          },
+
+          {
+            'name': 'Wohoh',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'rnd': ' kickba2Wohoh ', 'rng': [2, 10] },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Foster Wohoh',
+            'parts': [
+              {
+                'rnd': ['kickba2Foster ', 'kickba2Wohoh '],
+                'rng': [1, 10]
+              },
+            ]
+          },
+
+          {
+            'name': 'À la télé',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' À la tél' },
+              { 'rnd': 'é', 'rng': [3, 8] },
+              { 'bit': 'notes' },
+            ]
+          },
+        ]
+      },
+
+      /************************************************************************/
+      /* Presque trop facile                                                  */
+      /************************************************************************/
+      {
+        'name': 'Presque trop facile',
+        'msgs': [
+          {
+            'name': 'Même avec, au hasard',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' Même ' },
+              {
+                'rnd': [
+                  'avec une main dans l’dos',
+                  'avec les yeux bandés',
+                  'sans pouvoir faire dodo',
+                  'sans pouvoir rebooter',
+                  'sans jamais sauvegarder',
+                  'sans souris, sans clavier',
+                  'sans écrire les paroles',
+                  'sans Christian, sans Clavier',
+
+                ],
+                'rng': [1, 1]
+              },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'C’est presque trop facile',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' C’est presque trop facile ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Wohoh',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'rnd': ' kickba2Wohoh ', 'rng': [2, 10] },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Solo',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'rnd': ' kickba2Solo ', 'rng': [3, 10] },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Bravo Tony',
+            'parts': [
+              { 'str': 'Bravo Tony !' },
+              { 'rnd': ' FBCatch', 'rng': [2, 6] },
             ]
           },
         ]
@@ -473,27 +1470,119 @@ const kickboardConfig = {
           {
             'name': 'J’aimerais pouvoir reroll',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
               { 'str': ' J’aimerais pouvoir reroll ' },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
             ]
           },
 
           {
             'name': 'Steuplé MeuJeu dis-moi oui',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
               { 'str': ' Steuplé MeuJeu dis-moi oui ' },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Wouh, wouh',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' W' },
+              { 'rnd': 'o', 'rng': [1, 3] },
+              { 'rnd': 'u', 'rng': [1, 3] },
+              { 'str': 'h, w' },
+              { 'rnd': 'o', 'rng': [1, 3] },
+              { 'rnd': 'u', 'rng': [1, 3] },
+              { 'str': 'h ! ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Wohoh',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'rnd': ' kickba2Wohoh ', 'rng': [2, 10] },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Foster !',
+            'parts': [
+              { 'bit': 'foster' },
+              { 'rnd': '!', 'rng': [1, 5] }
             ]
           },
 
           {
             'name': 'Solo',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
-              { 'rnd': ' kickba2Solo ', 'min': 3, 'max': 10 },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
+              { 'rnd': ' kickba2Solo ', 'rng': [3, 10] },
+              { 'bit': 'notes' },
+            ]
+          },
+        ]
+      },
+
+      /************************************************************************/
+      /* Rouge, rouge, jaune, jaune, vert, vert                               */
+      /************************************************************************/
+      {
+        'name': 'Rouge, rouge, jaune, jaune, vert, vert',
+        'msgs': [
+          {
+            'name': '🔴🔴, 🟡🟡, 🟢🟢... 🟢🟢',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' 🔴🔴, 🟡🟡, 🟢🟢... 🟢🟢 ! ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': '🔵🔵, 🟢🟢, 🟡🟡... 🟢🟢🟢🟢',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' 🔵🔵, 🟢🟢, 🟡🟡... 🟢🟢🟢🟢 ! ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': '🔵🟡🟢🔵🔴🔵🟡🟢🔴🔵🔴🟢🔴🔵🔴🟢🔴',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' 🔵🟡🟢🔵🔴🔵🟡🟢🔴🔵🔴🟢🔴🔵🔴🟢🔴 ! ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Couleurs au hasard',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' ' },
+              {
+                'rnd': [
+                  ' ', '🔴', '🟠', '🟡', ' ', '🟢', '🟤', '🟣', '🔵'
+                ],
+                'rng': [10, 20]
+              },
+              { 'str': ' ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Solo',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'rnd': ' kickba2Solo ', 'rng': [3, 10] },
+              { 'bit': 'notes' },
             ]
           },
         ]
@@ -501,6 +1590,36 @@ const kickboardConfig = {
     ],
 
     'S': [
+      /************************************************************************/
+      /* Souris-clavier                                                       */
+      /************************************************************************/
+      {
+        'name': 'Souris clavier',
+        'msgs': [
+          {
+            'name': 'Il n’y a pas mieux !',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' Il n’y a pas mie' },
+              { 'rnd': 'u', 'rng': [1, 8] },
+              { 'str': 'x ! ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Le combo souris-clavier',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' Le combo souris-cl' },
+              { 'rnd': 'a', 'rng': [4, 8] },
+              { 'str': 'vier ' },
+              { 'bit': 'notes' },
+            ]
+          },
+        ]
+      },
+
       /************************************************************************/
       /* Sticks analos                                                        */
       /************************************************************************/
@@ -510,34 +1629,34 @@ const kickboardConfig = {
           {
             'name': 'Wohoh',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
-              { 'rnd': ' kickba2Wohoh ', 'min': 2, 'max': 10 },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
+              { 'rnd': ' kickba2Wohoh ', 'rng': [2, 10] },
+              { 'bit': 'notes' },
             ]
           },
 
           {
             'name': 'Ils arrachent les museaux Wohoh',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
               { 'str': ' Ils arrachent les museaux kickba2Wohoh ' },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
             ]
           },
 
           {
             'name': 'À des chiens et des chiots Wohoh',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
               { 'str': ' À des chiens et des chiots kickba2Wohoh ' },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
             ]
           },
 
           {
             'name': 'Foster',
             'parts': [
-              { 'rnd': 'kickba2Foster ', 'min': 1, 'max': 10 },
+              { 'bit': 'foster' },
             ]
           },
 
@@ -546,8 +1665,7 @@ const kickboardConfig = {
             'parts': [
               {
                 'rnd': ['kickba2Foster ', 'kickba2Wohoh '],
-                'min': 1,
-                'max': 10
+                'rng': [1, 10]
               },
             ]
           },
@@ -565,18 +1683,51 @@ const kickboardConfig = {
           {
             'name': 'Toi, tu me plais avec ton cosplay',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 10 },
+              { 'bit': 'notes' },
               { 'str': ' Toi, tu me plais avec ton cosplay ' },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 10 },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Toi, tu me plaiiiiis',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' Toi, tu me pla' },
+              { 'rnd': 'i', 'rng': [5, 15] },
+              { 'str': 's ! ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Avec ton cosplay',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' Avec ton cospla' },
+              { 'rnd': 'y', 'rng': [5, 15] },
+              { 'str': ' ! ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'En convention',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' En conventi' },
+              { 'rnd': 'o', 'rng': [5, 15] },
+              { 'str': ' ! ' },
+              { 'bit': 'notes' },
             ]
           },
 
           {
             'name': 'Aux Geek Faëries',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 10 },
+              { 'bit': 'notes' },
               { 'str': ' Aux geekfa1Ries Faëries ! geekfa1Love ' },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 10 },
+              { 'bit': 'notes' },
             ]
           },
         ]
@@ -591,45 +1742,56 @@ const kickboardConfig = {
           {
             'name': 'You know nothing Jon Snow',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 10 },
+              { 'bit': 'notes' },
               { 'str': ' You know nothing Jon Snow ' },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 10 },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Et le répète',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' Et le répète' },
+              { 'rnd': '...', 'rng': [0, 1] },
+              { 'str': ' ' },
+              { 'bit': 'notes' },
             ]
           },
 
           {
             'name': 'Tu ne sais rien',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 10 },
+              { 'bit': 'notes' },
               { 'str': ' Tu ne sais rien ' },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 10 },
+              { 'bit': 'notes' },
             ]
           },
 
           {
             'name': 'Tu ne sais rien Jon Snow',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 10 },
+              { 'bit': 'notes' },
               { 'str': ' Tu ne sais rien Jon Snow ' },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 10 },
+              { 'bit': 'notes' },
             ]
           },
 
           {
             'name': 'Tu ne sais rien Jean Neige',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 10 },
+              { 'bit': 'notes' },
               { 'str': ' Tu ne sais rien Jean Neige ' },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 10 },
+              { 'bit': 'notes' },
             ]
           },
 
           {
             'name': 'Solo',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
-              { 'rnd': ' kickba2Solo ', 'min': 3, 'max': 10 },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
+              { 'rnd': ' kickba2Solo ', 'rng': [3, 10] },
+              { 'bit': 'notes' },
             ]
           },
 
@@ -637,11 +1799,11 @@ const kickboardConfig = {
             'name': 'Spoilerz',
             'parts': [
               { 'str': 'Spoil' },
-              { 'rnd': ['e'], 'min': 1, 'max': 10 },
+              { 'rnd': ['e'], 'rng': [1, 10] },
               { 'str': 'r' },
-              { 'rnd': ['z'], 'min': 1, 'max': 10 },
+              { 'rnd': ['z'], 'rng': [1, 10] },
               { 'str': ' ' },
-              { 'rnd': ['!'], 'min': 1, 'max': 10 },
+              { 'rnd': ['!'], 'rng': [1, 10] },
             ]
           },
 
@@ -649,7 +1811,7 @@ const kickboardConfig = {
             'name': 'Bouchez-vous les oreilles',
             'parts': [
               { 'str': 'Bouchez-vous les oreilles ' },
-              { 'rnd': ['!'], 'min': 1, 'max': 10 },
+              { 'rnd': ['!'], 'rng': [1, 10] },
             ]
           },
         ]
@@ -666,52 +1828,51 @@ const kickboardConfig = {
           {
             'name': 'Tu es version bêta',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 10 },
+              { 'bit': 'notes' },
               { 'str': ' Tu es en version bêta ' },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 10 },
+              { 'bit': 'notes' },
             ]
           },
 
           {
             'name': 'Encore en version bêta',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 10 },
+              { 'bit': 'notes' },
               { 'str': ' Encore en version bêta ' },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 10 },
+              { 'bit': 'notes' },
             ]
           },
 
           {
             'name': 'Tu manques de finitions',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 10 },
+              { 'bit': 'notes' },
               { 'str': ' Tu manques de finitions ' },
               {
                 'rnd': '(surtout point de vue graphismes) ',
-                'min': 0,
-                'max': 1
+                'rng': [0, 1]
               },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 10 },
+              { 'bit': 'notes' },
             ]
           },
 
           {
             'name': 'Et je t’accepte comme ça',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 10 },
+              { 'bit': 'notes' },
               { 'str': ' Et je t’accepte comme ç' },
-              { 'rnd': 'a', 'min': 1, 'max': 10 },
+              { 'rnd': 'a', 'rng': [1, 10] },
               { 'str': ' ' },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 10 },
+              { 'bit': 'notes' },
             ]
           },
 
           {
             'name': 'Solo',
             'parts': [
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
-              { 'rnd': ' kickba2Solo ', 'min': 3, 'max': 10 },
-              { 'rnd': ['♩', '♪', '♫', '♬'], 'min': 1, 'max': 3 },
+              { 'bit': 'notes' },
+              { 'rnd': ' kickba2Solo ', 'rng': [3, 10] },
+              { 'bit': 'notes' },
             ]
           },
         ]
