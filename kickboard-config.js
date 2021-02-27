@@ -10,7 +10,7 @@ const kickboardConfig = {
       'rng': [4, 10]
     },
     'coeurs': {
-      'rnd': ['TwitchUnity ', 'BisexualPride ', 'VirtualHug', '<3 '],
+      'rnd': ['TwitchUnity ', 'BisexualPride ', 'VirtualHug ', '<3 '],
       'rng': [1, 10]
     },
     'foster': { 'rnd': 'kickba2Foster ', 'rng': [1, 10] },
