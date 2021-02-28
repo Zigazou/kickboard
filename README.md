@@ -60,11 +60,11 @@ chanson, le groupe est obligatoire).
 
 ### Les chansons
 
-Par exemple, `kicboardConfig.groups.F[0]` correspond à la chanson
+Par exemple, `kickboardConfig.groups.F[0]` correspond à la chanson
 « Une fille » :
 
-- `kicboardConfig.groups.F[0].name` : titre de la chanson (Une fille)
-- `kicboardConfig.groups.F[0].msgs` : liste des messages disponibles pour cette
+- `kickboardConfig.groups.F[0].name` : titre de la chanson (Une fille)
+- `kickboardConfig.groups.F[0].msgs` : liste des messages disponibles pour cette
   chanson ; à chaque message sera associé un bouton dans la Kickboard.
 
 ```JavaScript
@@ -93,9 +93,9 @@ Par exemple, `kicboardConfig.groups.F[0]` correspond à la chanson
 
 Chaque message est constituté de 2 éléments :
 
-- `kicboardConfig.groups.F[0].msgs[0].name` : nom du bouton, ce que
+- `kickboardConfig.groups.F[0].msgs[0].name` : nom du bouton, ce que
   l’utilsiateur verra (ici « Mais... »).
-- `kicboardConfig.groups.F[0].msgs[0].parts` : liste des éléments constituant
+- `kickboardConfig.groups.F[0].msgs[0].parts` : liste des éléments constituant
   le message à générer et à envoyer dans le chat.
 
 Dans le cas de la chanson « Une fille », les messages sont simples et toujours
