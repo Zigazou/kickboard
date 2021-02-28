@@ -1,3 +1,8 @@
+if (document.querySelector('div#kickboard') !== null) {
+  alert('Kickboard déjà installée !');
+  throw new Error('Already installed');
+}
+
 const kickboardConfig = {
   'bits': {
     'notes': { 'rnd': ['♩', '♪', '♫', '♬'], 'rng': [1, 3] },

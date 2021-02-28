@@ -26,6 +26,16 @@ function execPattern(pattern) {
     }
 }
 
+if (document.querySelector('nav.top-nav') === null) {
+    alert('Cette page ne semble pas être une page de Twitch !');
+    throw new Error("Not a Twitch page");
+}
+
+if (document.querySelector('div.chat-input') === null) {
+    alert('Le chat n’a pas été trouvé sur cette page !');
+    throw new Error("Chat not found");
+}
+
 const twitchContainer = document.querySelector('nav.top-nav').parentElement;
 const chatInput = document.querySelector('div.chat-input');
 const chatTextarea = chatInput.querySelector(
@@ -43,6 +53,7 @@ const textareaSetter = Object.getOwnPropertyDescriptor(
 
 // Kickboard container.
 const kickboardContainer = document.createElement('div')
+kickboardContainer.id = "kickboard";
 kickboardContainer.className = "tw-flex tw-flex-column tw-flex-nowrap";
 
 // Create groups and sections.
