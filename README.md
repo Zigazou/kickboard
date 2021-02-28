@@ -226,3 +226,22 @@ alors l’exemple sera équivalent à :
               { 'rnd': ['♩', '♪', '♫', '♬'], 'rng': [1, 3] },
             ]
 ```
+
+## Notes
+
+Ce dépôt porte l’étiquette `react` bien qu’il ne soit pas un projet ReactJS.
+
+Cela souligne simplement le fait que le code pilote une interface écrite en
+ReactJS (Twitch) et que cela nécessite une approche particulière pour la mise à
+jour d’un champ : 
+
+```JavaScript
+const textareaSetter = Object.getOwnPropertyDescriptor(
+    window.HTMLTextAreaElement.prototype,
+    "value"
+).set;
+```
+
+Cette fonction est nécessaire car la modification simple de la valeur d’un
+champ depuis JavaScript sera complètement remplacée par la valeur que ReactJS
+pense que la champ devrait avoir.
