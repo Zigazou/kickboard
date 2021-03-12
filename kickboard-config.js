@@ -4,6 +4,7 @@ if (document.querySelector('div#kickboard') !== null) {
 }
 
 const kickboardConfig = {
+  'refreshDelay': 60000,
   'bits': {
     'notes': { 'rnd': ['♩', '♪', '♫', '♬'], 'rng': [1, 3] },
     'chats': {
@@ -21,59 +22,78 @@ const kickboardConfig = {
     'foster': { 'rnd': 'kickba2Foster ', 'rng': [1, 10] },
   },
 
+  'everywhere': [
+    {
+      'name': 'Foster !',
+      'parts': [ { 'bit': 'foster' } ],
+    },
+
+    {
+      'name': 'Cœurs, cœurs',
+      'parts': [ { 'bit': 'coeurs' } ],
+    },
+
+    {
+      'name': 'Solo',
+      'parts': [
+        { 'bit': 'notes' },
+        { 'rnd': ' kickba2Solo ', 'rng': [3, 10] },
+        { 'bit': 'notes' },
+      ],
+    },
+
+    {
+      'name': 'Wohoh',
+      'parts': [
+        { 'bit': 'notes' },
+        { 'rnd': ' kickba2Wohoh ', 'rng': [2, 10] },
+        { 'bit': 'notes' },
+      ],
+    },
+
+    {
+      'name': 'Gros applaudissements',
+      'parts': [
+        { 'rnd': ['👏', '👏🏽', '👏🏿', '👏🏻'], 'rng': [5, 15] }
+      ]
+    },
+
+    '',
+
+    {
+      'name': 'Caliner',
+      'type': 'select',
+      'parts': [ { 'str': '!hug ' } ],
+      'cls': 'tw-snackbar--warning'
+    },
+
+    {
+      'name': 'Attaquer',
+      'type': 'select',
+      'parts': [ { 'str': '!attack' } ],
+      'cls': 'tw-snackbar--warning'
+    },
+
+    {
+      'name': 'Danser',
+      'parts': [ { 'str': '!dance' } ],
+      'cls': 'tw-snackbar--warning'
+    },
+
+    {
+      'name': 'Sauter',
+      'parts': [ { 'str': '!jump' } ],
+      'cls': 'tw-snackbar--warning'
+    },
+
+    {
+      'name': 'Bombe',
+      'parts': [ { 'str': '!bomb' } ],
+      'cls': 'tw-snackbar--warning'
+    },
+  ],
+
   'groups': {
-    'Divers': [
-      /************************************************************************/
-      /* Utiles en toute circonstance                                         */
-      /************************************************************************/
-      {
-        'name': 'Utiles en toute circonstance',
-        'msgs': [
-          {
-            'name': 'Foster !',
-            'parts': [ { 'bit': 'foster' } ]
-          },
-
-          {
-            'name': 'Cœurs, cœurs',
-            'parts': [ { 'bit': 'coeurs' } ]
-          },
-
-          {
-            'name': 'Solo',
-            'parts': [
-              { 'bit': 'notes' },
-              { 'rnd': ' kickba2Solo ', 'rng': [3, 10] },
-              { 'bit': 'notes' },
-            ]
-          },
-
-          {
-            'name': 'Wohoh',
-            'parts': [
-              { 'bit': 'notes' },
-              { 'rnd': ' kickba2Wohoh ', 'rng': [2, 10] },
-              { 'bit': 'notes' },
-            ]
-          },
-
-          {
-            'name': 'Petits applaudissements',
-            'parts': [
-              { 'rnd': ['👏', '👏🏽', '👏🏿', '👏🏻'], 'rng': [1, 5] }
-            ]
-          },
-
-          {
-            'name': 'Gros applaudissements',
-            'parts': [
-              { 'rnd': ['👏', '👏🏽', '👏🏿', '👏🏻'], 'rng': [5, 15] }
-            ]
-          },
-        ]
-      },
-    ],
-
     'A': [
       /************************************************************************/
       /* Alone in the dark                                                    */
@@ -88,15 +108,6 @@ const kickboardConfig = {
               { 'rnd': 'a', 'rng': [1, 5] },
               { 'str': 'h ' },
               { 'rnd': '!', 'rng': [1, 3] },
-            ]
-          },
-
-          {
-            'name': 'Solo',
-            'parts': [
-              { 'bit': 'notes' },
-              { 'rnd': ' kickba2Solo ', 'rng': [3, 10] },
-              { 'bit': 'notes' },
             ]
           },
 
@@ -230,15 +241,6 @@ const kickboardConfig = {
               { 'bit': 'notes' }
             ]
           },
-
-          {
-            'name': 'Solo',
-            'parts': [
-              { 'bit': 'notes' },
-              { 'rnd': ' kickba2Solo ', 'rng': [3, 10] },
-              { 'bit': 'notes' },
-            ]
-          },
         ]
       },
     ],
@@ -250,15 +252,6 @@ const kickboardConfig = {
       {
         'name': 'Carapace bleue',
         'msgs': [
-          {
-            'name': 'Wohoh',
-            'parts': [
-              { 'bit': 'notes' },
-              { 'rnd': ' kickba2Wohoh ', 'rng': [2, 10] },
-              { 'bit': 'notes' },
-            ]
-          },
-
           {
             'name': 'Waou',
             'parts': [
@@ -350,14 +343,6 @@ const kickboardConfig = {
         'name': 'Code Lyoko',
         'msgs': [
           {
-            'name': 'Foster !',
-            'parts': [
-              { 'bit': 'foster' },
-              { 'rnd': '!', 'rng': [1, 5] }
-            ]
-          },
-
-          {
             'name': 'Code Lyoko, tout reprogrammer',
             'parts': [
               { 'bit': 'notes' },
@@ -393,15 +378,6 @@ const kickboardConfig = {
             'parts': [
               { 'str': 'Tu veux voir ma 🍆 ?' },
               { 'rnd': ' <3', 'rng': [2, 10] },
-            ]
-          },
-
-          {
-            'name': 'Wohoh',
-            'parts': [
-              { 'bit': 'notes' },
-              { 'rnd': ' kickba2Wohoh ', 'rng': [2, 10] },
-              { 'bit': 'notes' },
             ]
           },
         ]
@@ -442,24 +418,6 @@ const kickboardConfig = {
               },
               { 'rnd': 'déjà ', 'rng': [0, 1] },
               { 'str': 'l’habitude ' },
-              { 'bit': 'notes' },
-            ]
-          },
-
-          {
-            'name': 'Wohoh',
-            'parts': [
-              { 'bit': 'notes' },
-              { 'rnd': ' kickba2Wohoh ', 'rng': [2, 10] },
-              { 'bit': 'notes' },
-            ]
-          },
-
-          {
-            'name': 'Solo',
-            'parts': [
-              { 'bit': 'notes' },
-              { 'rnd': ' kickba2Solo ', 'rng': [3, 10] },
               { 'bit': 'notes' },
             ]
           },
@@ -572,15 +530,6 @@ const kickboardConfig = {
               { 'rnd': ' <3', 'rng': [1, 3] },
             ]
           },
-
-          {
-            'name': 'Wohoh',
-            'parts': [
-              { 'bit': 'notes' },
-              { 'rnd': ' kickba2Wohoh ', 'rng': [2, 10] },
-              { 'bit': 'notes' },
-            ]
-          },
         ]
       },
     ],
@@ -668,15 +617,6 @@ const kickboardConfig = {
             'parts': [
               { 'bit': 'notes' },
               { 'str': ' J’tire en premier ! ' },
-              { 'bit': 'notes' },
-            ]
-          },
-
-          {
-            'name': 'Wohoh',
-            'parts': [
-              { 'bit': 'notes' },
-              { 'rnd': ' kickba2Wohoh ', 'rng': [2, 10] },
               { 'bit': 'notes' },
             ]
           },
@@ -819,24 +759,6 @@ const kickboardConfig = {
             'parts': [
               { 'bit': 'notes' },
               { 'str': ' Je t’inférieur à trois kickba2Wohoh kickba2Wohoh ' },
-              { 'bit': 'notes' },
-            ]
-          },
-
-          {
-            'name': 'Solo',
-            'parts': [
-              { 'bit': 'notes' },
-              { 'rnd': ' kickba2Solo ', 'rng': [3, 10] },
-              { 'bit': 'notes' },
-            ]
-          },
-
-          {
-            'name': 'Wohoh',
-            'parts': [
-              { 'bit': 'notes' },
-              { 'rnd': ' kickba2Wohoh ', 'rng': [2, 10] },
               { 'bit': 'notes' },
             ]
           },
@@ -1127,15 +1049,6 @@ const kickboardConfig = {
               { 'bit': 'notes' },
             ]
           },
-
-          {
-            'name': 'Wohoh',
-            'parts': [
-              { 'bit': 'notes' },
-              { 'rnd': ' kickba2Wohoh ', 'rng': [2, 10] },
-              { 'bit': 'notes' },
-            ]
-          },
         ]
       },
 
@@ -1202,15 +1115,6 @@ const kickboardConfig = {
               { 'bit': 'notes' },
               { 'str': ' Jamais ' },
               { 'rnd': 'jamais ', 'rng': [1, 5] },
-              { 'bit': 'notes' },
-            ]
-          },
-
-          {
-            'name': 'Solo',
-            'parts': [
-              { 'bit': 'notes' },
-              { 'rnd': ' kickba2Solo ', 'rng': [3, 10] },
               { 'bit': 'notes' },
             ]
           },
@@ -1283,15 +1187,6 @@ const kickboardConfig = {
               { 'bit': 'notes' },
             ]
           },
-
-          {
-            'name': 'Wohoh',
-            'parts': [
-              { 'bit': 'notes' },
-              { 'rnd': ' kickba2Wohoh ', 'rng': [2, 10] },
-              { 'bit': 'notes' },
-            ]
-          },
         ]
       },
     ],
@@ -1339,15 +1234,6 @@ const kickboardConfig = {
             'name': 'Des cœurs',
             'parts': [ { 'bit': 'coeurs' } ]
           },
-
-          {
-            'name': 'Solo',
-            'parts': [
-              { 'bit': 'notes' },
-              { 'rnd': ' kickba2Solo ', 'rng': [3, 10] },
-              { 'bit': 'notes' },
-            ]
-          },
         ]
       },
     ],
@@ -1359,23 +1245,6 @@ const kickboardConfig = {
       {
         'name': 'Pas vu à la télé',
         'msgs': [
-          {
-            'name': 'Foster !',
-            'parts': [
-              { 'bit': 'foster' },
-              { 'rnd': '!', 'rng': [1, 5] }
-            ]
-          },
-
-          {
-            'name': 'Wohoh',
-            'parts': [
-              { 'bit': 'notes' },
-              { 'rnd': ' kickba2Wohoh ', 'rng': [2, 10] },
-              { 'bit': 'notes' },
-            ]
-          },
-
           {
             'name': 'Foster Wohoh',
             'parts': [
@@ -1437,24 +1306,6 @@ const kickboardConfig = {
           },
 
           {
-            'name': 'Wohoh',
-            'parts': [
-              { 'bit': 'notes' },
-              { 'rnd': ' kickba2Wohoh ', 'rng': [2, 10] },
-              { 'bit': 'notes' },
-            ]
-          },
-
-          {
-            'name': 'Solo',
-            'parts': [
-              { 'bit': 'notes' },
-              { 'rnd': ' kickba2Solo ', 'rng': [3, 10] },
-              { 'bit': 'notes' },
-            ]
-          },
-
-          {
             'name': 'Bravo Tony',
             'parts': [
               { 'str': 'Bravo Tony !' },
@@ -1501,32 +1352,6 @@ const kickboardConfig = {
               { 'rnd': 'o', 'rng': [1, 3] },
               { 'rnd': 'u', 'rng': [1, 3] },
               { 'str': 'h ! ' },
-              { 'bit': 'notes' },
-            ]
-          },
-
-          {
-            'name': 'Wohoh',
-            'parts': [
-              { 'bit': 'notes' },
-              { 'rnd': ' kickba2Wohoh ', 'rng': [2, 10] },
-              { 'bit': 'notes' },
-            ]
-          },
-
-          {
-            'name': 'Foster !',
-            'parts': [
-              { 'bit': 'foster' },
-              { 'rnd': '!', 'rng': [1, 5] }
-            ]
-          },
-
-          {
-            'name': 'Solo',
-            'parts': [
-              { 'bit': 'notes' },
-              { 'rnd': ' kickba2Solo ', 'rng': [3, 10] },
               { 'bit': 'notes' },
             ]
           },
@@ -1581,15 +1406,6 @@ const kickboardConfig = {
               { 'bit': 'notes' },
             ]
           },
-
-          {
-            'name': 'Solo',
-            'parts': [
-              { 'bit': 'notes' },
-              { 'rnd': ' kickba2Solo ', 'rng': [3, 10] },
-              { 'bit': 'notes' },
-            ]
-          },
         ]
       },
     ],
@@ -1632,15 +1448,6 @@ const kickboardConfig = {
         'name': 'Sticks analos',
         'msgs': [
           {
-            'name': 'Wohoh',
-            'parts': [
-              { 'bit': 'notes' },
-              { 'rnd': ' kickba2Wohoh ', 'rng': [2, 10] },
-              { 'bit': 'notes' },
-            ]
-          },
-
-          {
             'name': 'Ils arrachent les museaux Wohoh',
             'parts': [
               { 'bit': 'notes' },
@@ -1655,13 +1462,6 @@ const kickboardConfig = {
               { 'bit': 'notes' },
               { 'str': ' À des chiens et des chiots kickba2Wohoh ' },
               { 'bit': 'notes' },
-            ]
-          },
-
-          {
-            'name': 'Foster',
-            'parts': [
-              { 'bit': 'foster' },
             ]
           },
 
@@ -1792,15 +1592,6 @@ const kickboardConfig = {
           },
 
           {
-            'name': 'Solo',
-            'parts': [
-              { 'bit': 'notes' },
-              { 'rnd': ' kickba2Solo ', 'rng': [3, 10] },
-              { 'bit': 'notes' },
-            ]
-          },
-
-          {
             'name': 'Spoilerz',
             'parts': [
               { 'str': 'Spoil' },
@@ -1868,15 +1659,6 @@ const kickboardConfig = {
               { 'str': ' Et je t’accepte comme ç' },
               { 'rnd': 'a', 'rng': [1, 10] },
               { 'str': ' ' },
-              { 'bit': 'notes' },
-            ]
-          },
-
-          {
-            'name': 'Solo',
-            'parts': [
-              { 'bit': 'notes' },
-              { 'rnd': ' kickba2Solo ', 'rng': [3, 10] },
               { 'bit': 'notes' },
             ]
           },
