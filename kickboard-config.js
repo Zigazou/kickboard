@@ -361,18 +361,18 @@ const kickboardConfig = {
               { 'str': ' C\'est la chanson des ' },
               {
                 'rnd': [
-                  'béliers',
-                  'taureaux',
-                  'gémeaux',
-                  'cancers',
-                  'lions',
-                  'vierges',
-                  'balances',
-                  'scorpions',
-                  'sagittaires',
-                  'capricorne',
-                  'verseaux',
-                  'poissons'
+                  'béliers ',
+                  'taureaux ',
+                  'gémeaux ',
+                  'cancers ',
+                  'lions ',
+                  'vierges ',
+                  'balances ',
+                  'scorpions ',
+                  'sagittaires ',
+                  'capricorne ',
+                  'verseaux ',
+                  'poissons '
                 ],
                 'rng': [1, 1]
               },
