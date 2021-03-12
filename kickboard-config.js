@@ -237,7 +237,7 @@ const kickboardConfig = {
             'name': 'Mon cœur est perdu dans le blizzard',
             'parts': [
               { 'bit': 'notes' },
-              { 'str': ' Mon cœur est perdu dans le blizzard ' },
+              { 'str': ' Mon coeur est perdu dans le blizzard ' },
               { 'bit': 'notes' }
             ]
           },
@@ -747,11 +747,6 @@ const kickboardConfig = {
           {
             'name': '<3',
             'parts': [ { 'rnd': '<3 ', 'rng': [1, 1] } ]
-          },
-
-          {
-            'name': 'Cœurs, cœurs',
-            'parts': [ { 'bit': 'coeurs' } ]
           },
 
           {
