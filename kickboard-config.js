@@ -6,7 +6,10 @@ if (document.querySelector('div#kickboard') !== null) {
 const kickboardConfig = {
   'refreshDelay': 60000,
   'bits': {
-    'notes': { 'rnd': ['♩', '♪', '♫', '♬'], 'rng': [1, 3] },
+    'notes': {
+      'rnd': ['SingsNote ', 'SingsMic ', 'TwitchSings '],
+      'rng': [1, 3]
+    },
     'chats': {
       'rnd': ['GlitchCat ', 'mcaT ', 'CoolCat ', 'InuyoFace '],
       'rng': [1, 3]
@@ -52,9 +55,9 @@ const kickboardConfig = {
     },
 
     {
-      'name': 'Gros applaudissements',
+      'name': 'Applaudissements',
       'parts': [
-        { 'rnd': ['👏', '👏🏽', '👏🏿', '👏🏻'], 'rng': [5, 15] }
+        { 'rnd': ['bravo ', 'clap '], 'rng': [5, 10] }
       ]
     },
 
