@@ -340,6 +340,49 @@ const kickboardConfig = {
       },
 
       /************************************************************************/
+      /* La chanson des balances                                              */
+      /************************************************************************/
+      {
+        'name': 'La chanson des balances',
+        'msgs': [
+          {
+            'name': 'C’est la chanson des balances',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' C\'est la chanson des balances ' },
+              { 'bit': 'notes' }
+            ]
+          },
+
+          {
+            'name': 'C’est la chanson version astrologique',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' C\'est la chanson des ' },
+              {
+                'rnd': [
+                  'béliers',
+                  'taureaux',
+                  'gémeaux',
+                  'cancers',
+                  'lions',
+                  'vierges',
+                  'balances',
+                  'scorpions',
+                  'sagittaires',
+                  'capricorne',
+                  'verseaux',
+                  'poissons'
+                ],
+                'rng': [1, 1]
+              },
+              { 'bit': 'notes' }
+            ]
+          },
+        ]
+      },
+
+      /************************************************************************/
       /* Code Lyoko                                                           */
       /************************************************************************/
       {
@@ -422,6 +465,60 @@ const kickboardConfig = {
               { 'rnd': 'déjà ', 'rng': [0, 1] },
               { 'str': 'l’habitude ' },
               { 'bit': 'notes' },
+            ]
+          },
+        ]
+      },
+    ],
+
+    'D': [
+      /************************************************************************/
+      /* Développeurs                                                         */
+      /************************************************************************/
+      {
+        'name': 'Développeurs',
+        'msgs': [
+          {
+            'name': 'Oh oui on aime les bits',
+            'parts': [ { 'str': 'Oh oui on aime les bits !' } ]
+          },
+
+          {
+            'name': 'Dééév\'loooppeurs',
+            'parts': [
+              { 'bit': 'notes' },
+              { 'str': ' D' },
+              { 'rnd': 'é', 'rng': [1, 5] },
+              { 'str': 'v\'l' },
+              { 'rnd': 'o', 'rng': [1, 5] },
+              { 'str': 'pp' },
+              { 'rnd': 'e', 'rng': [1, 5] },
+              { 'rnd': 'u', 'rng': [1, 5] },
+              { 'str': 'rs ' },
+              { 'bit': 'notes' },
+            ]
+          },
+
+          {
+            'name': 'Vous savez…',
+            'parts': [
+              { 'str': 'Vous savez, ' },
+              {
+                'rnd': [
+                  'notre langage à nous c\'est pas les mots',
+                  'Github, forms, listes de diffusion',
+                  'nous sommes des gens très très conscienceux'
+                ],
+                'rng': [1, 1]
+              },
+            ]
+          },
+
+          {
+            'name': 'Et si t’insistes…',
+            'parts': [
+              { 'str': 'Et si t\'insistes lourdement, on dit à Hadopi ' },
+              { 'str': 'que tu télécharges tes séries illégalement' },
             ]
           },
         ]
