@@ -34,6 +34,87 @@ function fillWithUserList(select, list) {
     });
 }
 
+const userStat = {
+    lastVisitedMessage: null,
+    users: {},
+};
+
+function analyzeMessage(node) {
+    const textNode = node.querySelector("span.text-fragment");
+    const userNode = node.querySelector("[data-a-user]");
+
+    if (textNode === null || userNode === null) return;
+
+    const text = textNode.innerText;
+    const user = userNode.dataset.aUser;
+
+    // First time we see this user?
+    if (userStat.users[user] === undefined) {
+        userStat.users[user] = {
+            hug: 0,
+            attack: 0,
+            dance: 0,
+            jump: 0,
+            talk: 0,
+        };
+    }
+
+    if (text.startsWith('!hug'))  {
+        userStat.users[user].hug += 1;
+    } else if (text.startsWith('!attack') || text.startsWith('!bomb'))  {
+        userStat.users[user].attack += 1;
+    } else if (text.startsWith('!dance'))  {
+        userStat.users[user].dance += 1;
+    } else if (text.startsWith('!jump'))  {
+        userStat.users[user].jump += 1;
+    } else {
+        userStat.users[user].talk += 1;
+    }
+}
+
+function findTop(key) {
+    let topUser = '*personne*';
+    let max = 0;
+    for (let user in userStat.users) {
+        if (userStat.users[user][key] > max) {
+            max = userStat.users[user][key];
+            topUser = user;
+        }
+    }
+
+    return topUser;
+}
+
+function updateUserStat() {
+    // Is there a last visited message?
+    if (userStat.lastVisitedMessage === null ||
+        userStat.lastVisitedMessage.parentElement === null) {
+        userStat.lastVisitedMessage = document.querySelector(
+            ".chat-line__message"
+        );
+
+        // Stil no available message?
+        if (userStat.lastVisitedMessage === null) return;
+        analyzeMessage(userStat.lastVisitedMessage);
+    }
+
+    // Is there new messages?
+    while (userStat.lastVisitedMessage.nextSibling !== null) {
+        userStat.lastVisitedMessage = userStat.lastVisitedMessage.nextSibling;
+        analyzeMessage(userStat.lastVisitedMessage);
+    }
+
+    // Compute ranking
+    let ranking = "";
+    ranking = "Câlinerie&nbsp;: <span class='chat-author__display-name'>" + findTop('hug') + '</span>';
+    ranking += " | agressivité&nbsp;: <span class='chat-author__display-name'>" + findTop('attack') + '</span>';
+    ranking += " | blabla&nbsp;: <span class='chat-author__display-name'>" + findTop('talk') + '</span>';
+    ranking += " | saut&nbsp;: <span class='chat-author__display-name'>" + findTop('jump') + '</span>';
+    ranking += " | danse&nbsp;: <span class='chat-author__display-name'>" + findTop('dance') + '</span>';
+
+    kickboardRanking.innerHTML = ranking;
+}
+
 function execPattern(pattern) {
     if ('bit' in pattern) {
         pattern = kickboardConfig.bits[pattern.bit];
@@ -88,9 +169,13 @@ const textareaSetter = Object.getOwnPropertyDescriptor(
 ).set;
 
 // Kickboard container.
-const kickboardContainer = document.createElement('div')
+const kickboardContainer = document.createElement('div');
 kickboardContainer.id = "kickboard";
 kickboardContainer.className = "tw-flex tw-flex-column tw-flex-nowrap";
+const kickboardRanking = document.createElement('div');
+kickboardRanking.id = "kickboard-ranking";
+kickboardContainer.appendChild(kickboardRanking);
+setInterval(updateUserStat, kickboardConfig.refresh.userStat);
 
 // Create groups and sections.
 const fields = document.createElement('div');
@@ -109,7 +194,7 @@ select.addEventListener('change', event => {
 });
 
 updateUserList();
-setInterval(updateUserList, kickboardConfig.refreshDelay);
+setInterval(updateUserList, kickboardConfig.refresh.userList);
 const sectionsArea = document.createElement('div');
 const firstOption = document.createElement('option');
 firstOption.innerText = "-- Selectionnez la chanson... --";
@@ -143,7 +228,7 @@ for (let groupName in kickboardConfig.groups) {
                 fillWithUserList(selectUser, currentUserList)
                 setInterval(
                     () => { fillWithUserList(selectUser, currentUserList); },
-                    kickboardConfig.refreshDelay
+                    kickboardConfig.refresh.userList
                 )
 
                 const selectButton = document.createElement('button');

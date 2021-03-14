@@ -4,7 +4,10 @@ if (document.querySelector('div#kickboard') !== null) {
 }
 
 const kickboardConfig = {
-  'refreshDelay': 60000,
+  'refresh': {
+    'userList': 60000,
+    'userStat': 10000,
+  },
   'bits': {
     'notes': {
       'rnd': ['SingsNote ', 'SingsMic ', 'TwitchSings '],
@@ -64,7 +67,7 @@ const kickboardConfig = {
     '',
 
     {
-      'name': 'Caliner',
+      'name': 'Câliner',
       'type': 'select',
       'parts': [ { 'str': '!hug ' } ],
       'cls': 'tw-snackbar--warning'
